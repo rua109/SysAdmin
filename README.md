@@ -5,6 +5,7 @@
 ### Routing
 
 Following figure shows how routing is done by NFTables (src: https://wiki.nftables.org/wiki-nftables/index.php/Netfilter_hooks)
+
 ![Routing](/assets/images/nf-hooks.png)
 
 
@@ -52,6 +53,20 @@ table ip firewall {
   }
 }
 ```
+
+The **priority** parameter accepts a signed integer value or a standard priority name which specifies the order in which chains with same **hook** value are traversed. The ordering is ascending, i.e. lower priority values have precedence over higher ones.
+
+| Name     | Value | Families                   | Hooks       |
+|----------|-------|----------------------------|-------------|
+|  raw     | -300  | ip, ip6, inet              | all         |
+| mangle   | -150  | ip, ip6, inet              | all         |     
+| dstnat   | -100  | ip, ip6, inet              | prerouting  |
+| filter   | 0     | ip, ip6, inet, arp, netdev | all         |
+| security | 50    | ip, ip6, inet              | all         |
+| srcnat   | 100   | ip, ip6, inet              | postrouting |
+
+
+
 ### NAT
 The following example shows a host `forwarding` rule typically used
 ```
