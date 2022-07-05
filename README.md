@@ -2,6 +2,13 @@
 
 ## NFTables
 
+### Routing
+
+Following figure shows how routing is done by NFTables (src: https://wiki.nftables.org/wiki-nftables/index.php/Netfilter_hooks)
+![Routing](/assets/images/nf-hooks.png)
+
+### Basic commands
+
 To list all tables do 
 ```
 nft list tables
@@ -75,5 +82,4 @@ table ip firewall_trace {
 To actually do the tracing do -
 ```
 nft monitor trace
-```
 ```
