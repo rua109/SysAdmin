@@ -7,6 +7,7 @@
 Following figure shows how routing is done by NFTables (src: https://wiki.nftables.org/wiki-nftables/index.php/Netfilter_hooks)
 ![Routing](/assets/images/nf-hooks.png)
 
+
 ### Basic commands
 
 To list all tables do 
