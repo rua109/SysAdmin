@@ -1,5 +1,31 @@
 # SysAdmin
 
+## Burning a iso disk
+
+Plug your USB drive into the computer. Type the following command
+```
+lsblk
+```
+
+Unmount the USB drive
+```
+sudo unmount /dev/sdbx
+```
+
+Check if the USB is unmounted by executing `lsblk` again
+
+Burn the ISO to the USB drive
+```
+sudo dd bs=4M if=img.iso of=/dev/sdbx status=progress oflag=sync
+```
+Here is what the flags mean -
+- `dd` is the command that copies and converts data
+- `bs=4M` sets the block size to `4MB` for efficient data transfer
+- `if=img.iso` specifies your ISO file as the input file
+- `of=/dev/sdbx` specifies USB drive as output file
+- `status=progress` shows progress bar during the process
+- `oflag=sync` ensures that the command doesn't finish until the USB drive has received all the data successfully.
+
 ## NFTables
 
 ### Routing
