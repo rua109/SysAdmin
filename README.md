@@ -9,7 +9,7 @@ lsblk
 
 Unmount the USB drive
 ```
-sudo unmount /dev/sdbx
+sudo umount /dev/sdbx
 ```
 
 Check if the USB is unmounted by executing `lsblk` again
